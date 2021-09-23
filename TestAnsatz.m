@@ -4,7 +4,13 @@
 %%%%%%%%%%%%%% Gabriel Martine
 %%%%%%%%%%%%%% Last updated: Sep 19 2019
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-clear all; close all; StartINTLAB();
+clear all; close all;
+
+% Intval must be available through INTLAB - it can be obtained at https://www.tuhh.de/ti3/rump/intlab/
+% StartINTLAB();
+
+% The current project must be loaded in the path
+% addpath(genpath('.')
 
 params_psibar = [0.07, 0.3, 0.5]; params_beta = [0.025, 0.5, 1.0]; params_M = [20, 30, 40];
 
