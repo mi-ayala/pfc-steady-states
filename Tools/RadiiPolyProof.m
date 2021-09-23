@@ -11,9 +11,9 @@ A = intval(A);
 norm_A = NormMatrixNu(A, pfc_g.intval_nu_mat);
 FA = F_2D(A, pfc_g, true);
 
-%DF and its inverse (tensors)
+%DF and its inverse (tensors) - note that G^-1 will use interval arithmetic, but this is not necessary!
 G = DF_2D(A, pfc_g, true);
-Ginv = G^-1;
+Ginv = intval(inv(mid(G)));
 if any(isnan(Ginv))
 	fprintf('WARNING!!! G is not invertible!\n');
 	return;

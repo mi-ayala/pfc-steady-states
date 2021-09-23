@@ -4,7 +4,13 @@
 %%%%%%%%%%%%%% Gabriel Martine
 %%%%%%%%%%%%%% Last updated: Sep 18 2021
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-clear all; close all; StartINTLAB();
+clear all; close all;
+
+% Intval must be available through INTLAB - it can be obtained at https://www.tuhh.de/ti3/rump/intlab/
+% StartINTLAB();
+
+% The current project must be loaded in the path
+% addpath(genpath('.')
 
 filename = 'CoefficientFiles/table_5/state_row1.mat';
 load(filename)
