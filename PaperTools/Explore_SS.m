@@ -7,12 +7,21 @@
 clear all; close all; StartINTLAB();
 
 %PFC and proof parameters
-intval_psibar = intval('0.5');
-intval_beta = intval('0.6');
+intval_psibar = intval('0.161060');
+intval_beta = intval('0.07');
 intval_nu = intval('1.01');
 
 %Wavevector for two-mode PFC - use NaN for usual PFC
-two_q = NaN;
+two_q = (2*cos(pi/5))^(-1);
+
+
+%PFC and proof parameters
+%intval_psibar = intval('0.5');
+%intval_beta = intval('0.6');
+%intval_nu = intval('1.01');
+
+%Wavevector for two-mode PFC - use NaN for usual PFC
+%two_q = NaN;
 
 %Numerical parameters
 N_atoms_x = 7;              %Number of atoms in the x direction
