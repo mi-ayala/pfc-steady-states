@@ -26,7 +26,7 @@ overwrite_SS = false;
 compare_trials = 4;
 compare_SS_file = 'SS/SS.mat';
 
-explicit_output_test = 'A.mat';		%Only used to test the output of Connect_SS
+%explicit_output_test = 'A.mat';		%Only used to test the output of Connect_SS
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %Array setup
@@ -53,14 +53,14 @@ else
 end
 
 %If testing a given output file, only use that initial condition
-if ~strcmp(explicit_output_test, '')
-	load(explicit_output_test);
-	[duplicate_id, list_SS, list_counts] = Accumulate_SS(output_A,pfc_g,list_SS,list_counts,compare_SS_file,false,false);
-	if isnan(duplicate_id)
-		error('Newton solver failed');
-	end
-	fprintf('\n');
-else
+%if ~strcmp(explicit_output_test, '')
+%	load(explicit_output_test);
+%	[duplicate_id, list_SS, list_counts] = Accumulate_SS(output_A,pfc_g,list_SS,list_counts,compare_SS_file,false,false);
+%	if isnan(duplicate_id)
+%		error('Newton solver failed');
+%	end
+%	fprintf('\n');
+%else
 	%Otherwise, proceed through the trials and always test the four main ansatz at the end
 	Atest = PrepareAnsatz(pfc_g, false);
 	for nn = 1:compare_trials
@@ -77,7 +77,7 @@ else
 		end
 		fprintf('\n');
 	end
-end
+%end
 
 %Store the list file
 save(compare_SS_file, '-append', 'list_SS', 'list_counts');
