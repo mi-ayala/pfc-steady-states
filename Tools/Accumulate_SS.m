@@ -45,26 +45,26 @@ if PRINT_TIMING fprintf('Time elapsed in the Newton solver: %.2fs\n', toc); end
 
 
 %--------------PROOF, ENERGY, EIGENVALUE CHECK AND PLOT-------------------------
-tic;
-[r_min, r_max, G_PFC] = RadiiPolyProof(A, pfc_g);
-if PRINT_TIMING fprintf('Time elapsed in the proof: %.2fs\n', toc); end
+%tic;
+%[r_min, r_max, G_PFC] = RadiiPolyProof(A, pfc_g);
+%if PRINT_TIMING fprintf('Time elapsed in the proof: %.2fs\n', toc); end
 
-tic;
-[energy, energy_error] = RigorousEnergy(A, r_min, pfc_g);
-if PRINT_TIMING fprintf('Time elapsed computing the energy: %.2fs\n', toc); end
+%tic;
+%[energy, energy_error] = RigorousEnergy(A, r_min, pfc_g);
+%if PRINT_TIMING fprintf('Time elapsed computing the energy: %.2fs\n', toc); end
 
-tic;
-[num_pos_eig, num_neg_eig, num_zero_eig, unstable_directions, eigenvalues_ok] = GetStability(G_PFC, verify_eigenvalues);
-if PRINT_TIMING fprintf('Time elapsed computing unstable directions: %.2fs\n', toc); end
+%tic;
+%[num_pos_eig, num_neg_eig, num_zero_eig, unstable_directions, eigenvalues_ok] = GetStability(G_PFC, verify_eigenvalues);
+%if PRINT_TIMING fprintf('Time elapsed computing unstable directions: %.2fs\n', toc); end
 
 
 %--------------ADDITION TO THE SS FILE (not necessarily verified!)---------
 list_SS{end+1} = Class_SS; list_counts(end+1) = 1;
 list_SS{end}.A = A; list_SS{end}.psi = GetPhase(A, pfc_g);
-list_SS{end}.E = energy; list_SS{end}.E_error = energy_error; list_SS{end}.E_intval = midrad(energy, energy_error);
-list_SS{end}.r_min = r_min; list_SS{end}.r_max = r_max;
-list_SS{end}.p_eig = num_pos_eig; list_SS{end}.n_eig = num_neg_eig; list_SS{end}.z_eig = num_zero_eig;
-list_SS{end}.unstable = unstable_directions; list_SS{end}.eig_ok = eigenvalues_ok;
+%list_SS{end}.E = energy; list_SS{end}.E_error = energy_error; list_SS{end}.E_intval = midrad(energy, energy_error);
+%list_SS{end}.r_min = r_min; list_SS{end}.r_max = r_max;
+%list_SS{end}.p_eig = num_pos_eig; list_SS{end}.n_eig = num_neg_eig; list_SS{end}.z_eig = num_zero_eig;
+%list_SS{end}.unstable = unstable_directions; list_SS{end}.eig_ok = eigenvalues_ok;
 
 %Duplicate SS is the new number of steady states
 duplicate_id = length(list_SS);
