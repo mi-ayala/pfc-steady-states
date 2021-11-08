@@ -11,7 +11,7 @@ intval_psibar = intval('0.161060');
 intval_beta = intval('0.07');
 intval_nu = intval('1.01');
 
-%Wavevector for two-mode PFC - use NaN for usual PFC
+%Wavevector for two-mode PFC - use NaN for usual PFC. 
 two_q = (2*cos(pi/5))^(-1);
 
 
